@@ -48,7 +48,6 @@ struct FruitDetailView: View {
                     .padding(.horizontal,20)
                     .frame(maxWidth:640, alignment: .leading)
                 }// MARK:  VSTACK
-                .navigationBarTitle("Fruit")
                 .navigationBarTitleDisplayMode(.inline)
                 
                
