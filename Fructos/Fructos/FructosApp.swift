@@ -11,7 +11,8 @@ import SwiftUI
 struct FructosApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            OnboardingScreen()
+            
         }
     }
 }

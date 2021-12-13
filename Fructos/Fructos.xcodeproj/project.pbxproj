@@ -13,6 +13,7 @@
 		46BADF4D27674F4200E0BB63 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46BADF4C27674F4200E0BB63 /* Preview Assets.xcassets */; };
 		46D02050276762A000E1A88A /* FruitCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D0204F276762A000E1A88A /* FruitCardView.swift */; };
 		46D020532767691A00E1A88A /* StartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D020522767691A00E1A88A /* StartButtonView.swift */; };
+		46D0205527677C4D00E1A88A /* OnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D0205427677C4D00E1A88A /* OnboardingScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		46BADF4C27674F4200E0BB63 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		46D0204F276762A000E1A88A /* FruitCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitCardView.swift; sourceTree = "<group>"; };
 		46D020522767691A00E1A88A /* StartButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButtonView.swift; sourceTree = "<group>"; };
+		46D0205427677C4D00E1A88A /* OnboardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				46BADF4727674F4200E0BB63 /* ContentView.swift */,
+				46D0205427677C4D00E1A88A /* OnboardingScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46D0205527677C4D00E1A88A /* OnboardingScreen.swift in Sources */,
 				46BADF4827674F4200E0BB63 /* ContentView.swift in Sources */,
 				46D020532767691A00E1A88A /* StartButtonView.swift in Sources */,
 				46BADF4627674F4200E0BB63 /* FructosApp.swift in Sources */,

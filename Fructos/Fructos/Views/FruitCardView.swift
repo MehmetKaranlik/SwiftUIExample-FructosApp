@@ -20,28 +20,26 @@ struct FruitCardView: View {
             VStack(spacing:20) {
                 // MARK:  FRUIT IMAGE
                 Image("blueberry")
-                    .imageModifier(firstScale: 1, lastScale: 0.6, condition: isAnimating)
-                    
-                    
+                    .imageModifier(firstScale: 0.6, lastScale: 1, condition: isAnimating)
                 // MARK:  FRUIT TITLE
                 Text("Blueberry")
                     .titleModifier()
-                    
                 // MARK:  HEADLINE
                 Text("Blueberries are sweet, nutritious and wildly popular fruit all over the world.")
                     .headlineModifier()
-                   
-               
                 // MARK:  BUTTON
                StartButtonView()
-            }// MARK:  VSTACK
+            }
+           // MARK:  VSTACK
         }   // MARK:  ZSTACK
         .zstackModifier()
-        .onAppear(perform: {
-            withAnimation(.easeOut(duration: 0.5)) {
+        .onAppear {
+            withAnimation(.easeOut(duration: 1)) {
                 isAnimating = true
             }
-        })
+        }
+        
+      
         
 
         
@@ -61,14 +59,15 @@ struct SwiftUIView_Previews: PreviewProvider {
     }
 }
 
-fileprivate extension ZStack {
-   
-        func zstackModifier() -> some View {
+ private extension ZStack {
+       func zstackModifier() -> some View {
             self
                 .frame(minWidth: 0,  maxWidth:.infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
                 .background(
                     LinearGradient(gradient: Gradient(colors:   [Color("ColorBlueberryLight") , Color("ColorBlueberryDark")]),  startPoint:.top, endPoint:.bottom))
                 .cornerRadius(20)
+                .padding(.horizontal,20)
+                .padding(.vertical,15)
         }
     }// MARK:  ZSTACK EXTENSION
 
@@ -81,7 +80,7 @@ fileprivate extension ZStack {
             .resizable()
             .scaledToFit()
             .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.35),  radius: 8, x: 6, y: 0)
-            .scaleEffect(condition ? firstScale : lastScale)
+            .scaleEffect(condition ? lastScale     : firstScale )
     }
      
 //fileprivate func scaleModifier(firstScale: Double , lastScale: Double, condition:Bool) -> some View {
