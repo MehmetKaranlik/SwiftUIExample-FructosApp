@@ -11,11 +11,17 @@ struct ContentView: View {
     var body: some View {
         Text("Hello, Fructos!")
             .padding()
-    }
-}
+    } // MARK:  bodyEnding
+    
+} // MARK:  View ending
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
 }
+
+    
+
+
+
