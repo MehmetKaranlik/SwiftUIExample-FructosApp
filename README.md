@@ -1,4 +1,4 @@
 # SwiftUIExample-FructosApp
 4th Day of SwiftUI learning.
-FructosApp with API services connected. 
+FructosApp with dummy data connected. 
 Based on atomic programming concept.
