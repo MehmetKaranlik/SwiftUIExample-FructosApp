@@ -16,6 +16,7 @@
 		46D0205527677C4D00E1A88A /* OnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D0205427677C4D00E1A88A /* OnboardingScreen.swift */; };
 		46D0205827677ECC00E1A88A /* FruitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D0205727677ECC00E1A88A /* FruitModel.swift */; };
 		46D0205B27677FAF00E1A88A /* FruitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D0205A27677FAF00E1A88A /* FruitData.swift */; };
+		46F0AE002767B8BA0080B45F /* ListTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F0ADFF2767B8BA0080B45F /* ListTileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		46D0205427677C4D00E1A88A /* OnboardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreen.swift; sourceTree = "<group>"; };
 		46D0205727677ECC00E1A88A /* FruitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitModel.swift; sourceTree = "<group>"; };
 		46D0205A27677FAF00E1A88A /* FruitData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitData.swift; sourceTree = "<group>"; };
+		46F0ADFF2767B8BA0080B45F /* ListTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 			children = (
 				46D0204F276762A000E1A88A /* FruitCardView.swift */,
 				46D020522767691A00E1A88A /* StartButtonView.swift */,
+				46F0ADFF2767B8BA0080B45F /* ListTileView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 			files = (
 				46D0205B27677FAF00E1A88A /* FruitData.swift in Sources */,
 				46D0205527677C4D00E1A88A /* OnboardingScreen.swift in Sources */,
+				46F0AE002767B8BA0080B45F /* ListTileView.swift in Sources */,
 				46BADF4827674F4200E0BB63 /* ContentView.swift in Sources */,
 				46D020532767691A00E1A88A /* StartButtonView.swift in Sources */,
 				46BADF4627674F4200E0BB63 /* FructosApp.swift in Sources */,

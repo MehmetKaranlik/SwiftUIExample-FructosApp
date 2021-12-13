@@ -8,16 +8,32 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        Text("Hello, Fructos!")
-            .padding()
-    } // MARK:  bodyEnding
+    // MARK:  PROPERTIES
+    fileprivate var fruitList : [Fruit] = fruitsData
     
-} // MARK:  View ending
+    // MARK:  BODY
+    var body: some View {
+        ScrollView {
+            VStack(alignment:.leading,spacing: 5) {
+                ForEach(fruitList[0...12]) { item in
+                    ListTileView(fruit: item)
+                }
+            }
+            .padding(.horizontal, 5)
+        }
+     
+    }
+    
+}
 
+
+    
+    
+    // MARK:  PREVIEW
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+        
     }
 }
 

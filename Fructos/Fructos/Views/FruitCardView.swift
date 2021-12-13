@@ -18,21 +18,11 @@ struct FruitCardView: View {
     @State private var isAnimating: Bool = false
     
 // MARK:  BODY
+
+    
     var body: some View {
         ZStack {
-            VStack(spacing:20) {
-                // MARK:  FRUIT IMAGE
-                Image(fruit.image)
-                    .imageModifier(firstScale: 0.6, lastScale: 1, condition: isAnimating)
-                // MARK:  FRUIT TITLE
-                Text(fruit.title)
-                    .titleModifier()
-                // MARK:  HEADLINE
-                Text(fruit.headline)
-                    .headlineModifier()
-                // MARK:  BUTTON
-               StartButtonView()
-            }
+            _buildSomething()
            // MARK:  VSTACK
         }   // MARK:  ZSTACK
         .zstackModifier(
@@ -54,6 +44,23 @@ struct FruitCardView: View {
     
     
     }
+
+    fileprivate func _buildSomething() -> some View {
+        return VStack(spacing:20) {
+                // MARK:  FRUIT IMAGE
+            Image(fruit.image)
+                .imageModifier(firstScale: 0.6, lastScale: 1, condition: isAnimating)
+                // MARK:  FRUIT TITLE
+            Text(fruit.title)
+                .titleModifier()
+                // MARK:  HEADLINE
+            Text(fruit.headline)
+                .headlineModifier()
+                // MARK:  BUTTON
+            StartButtonView()
+        }
+    }
+
 }
 
 

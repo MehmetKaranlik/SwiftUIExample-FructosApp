@@ -9,10 +9,15 @@ import SwiftUI
 
 @main
 struct FructosApp: App {
+    @AppStorage("isOnboarding") var isFirstLaunch : Bool = true
     var body: some Scene {
         WindowGroup {
+            if isFirstLaunch {
             OnboardingScreen()
-            
+            } else {
+                ContentView()
+                    
+            }
         }
     }
 }

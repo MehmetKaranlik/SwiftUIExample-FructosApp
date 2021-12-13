@@ -18,7 +18,6 @@ struct OnboardingScreen: View {
              // Text("Cards")
             FruitCardView(fruit: item)
             }// MARK:  Loop
-           
         }.tabViewModifier()
 
     }
