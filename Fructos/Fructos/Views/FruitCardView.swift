@@ -12,6 +12,9 @@ import SwiftUI
 
 struct FruitCardView: View {
 // MARK:  PROPERTIES
+    
+    var fruit : Fruit
+    
     @State private var isAnimating: Bool = false
     
 // MARK:  BODY
@@ -19,20 +22,23 @@ struct FruitCardView: View {
         ZStack {
             VStack(spacing:20) {
                 // MARK:  FRUIT IMAGE
-                Image("blueberry")
+                Image(fruit.image)
                     .imageModifier(firstScale: 0.6, lastScale: 1, condition: isAnimating)
                 // MARK:  FRUIT TITLE
-                Text("Blueberry")
+                Text(fruit.title)
                     .titleModifier()
                 // MARK:  HEADLINE
-                Text("Blueberries are sweet, nutritious and wildly popular fruit all over the world.")
+                Text(fruit.headline)
                     .headlineModifier()
                 // MARK:  BUTTON
                StartButtonView()
             }
            // MARK:  VSTACK
         }   // MARK:  ZSTACK
-        .zstackModifier()
+        .zstackModifier(
+            color1: fruit.gradientColors[0],
+            color2: fruit.gradientColors[1]
+        )
         .onAppear {
             withAnimation(.easeOut(duration: 1)) {
                 isAnimating = true
@@ -55,16 +61,18 @@ struct FruitCardView: View {
 // MARK:  PREVIEW
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
-        FruitCardView().previewLayout(.fixed(width: 320, height: 640))
+        FruitCardView(fruit: fruitsData[7])
+            .previewLayout(
+                .fixed(width: 320, height: 640))
     }
 }
 
  private extension ZStack {
-       func zstackModifier() -> some View {
+     func zstackModifier(color1:Color, color2:Color) -> some View {
             self
                 .frame(minWidth: 0,  maxWidth:.infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
                 .background(
-                    LinearGradient(gradient: Gradient(colors:   [Color("ColorBlueberryLight") , Color("ColorBlueberryDark")]),  startPoint:.top, endPoint:.bottom))
+                    LinearGradient(gradient: Gradient(colors: [color1 , color2]),  startPoint:.top, endPoint:.bottom))
                 .cornerRadius(20)
                 .padding(.horizontal,20)
                 .padding(.vertical,15)
