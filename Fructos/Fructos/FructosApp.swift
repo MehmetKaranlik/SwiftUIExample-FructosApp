@@ -15,7 +15,7 @@ struct FructosApp: App {
             if isFirstLaunch {
             OnboardingScreen()
             } else {
-                ContentView()
+               HomeScreen()
                     
             }
         }

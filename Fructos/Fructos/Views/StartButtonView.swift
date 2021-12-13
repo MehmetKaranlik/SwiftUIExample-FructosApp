@@ -14,7 +14,9 @@ struct StartButtonView: View {
     // MARK:  BODY
     var body: some View {
         Button {
-            isFirstLaunch = false
+            withAnimation {
+                isFirstLaunch = false
+            }
         } label: {
             HStack(spacing:8) {
                 Text("Start")
