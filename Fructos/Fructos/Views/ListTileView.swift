@@ -29,6 +29,7 @@ struct ListTileView: View {
                     .font(.caption)
                     .fontWeight(.light)
                     .foregroundColor(.secondary)
+                    .multilineTextAlignment(.leading)
             }
             
 
