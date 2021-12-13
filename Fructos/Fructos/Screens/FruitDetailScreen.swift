@@ -43,14 +43,21 @@ struct FruitDetailView: View {
                             
                             
                         // MARK:  LINK
+                        SourceLinkView().padding(.bottom,50)
                     }// MARK:  VSTACK
                     .padding(.horizontal,20)
                     .frame(maxWidth:640, alignment: .leading)
                 }// MARK:  VSTACK
-                .hiddenNavigationBarStyle().ignoresSafeArea().padding(.top, -50)
+                .navigationBarTitle("Fruit")
+                .navigationBarTitleDisplayMode(.inline)
+                
+               
+                
+                
             }// MARK:  SCROLL
-            
+            .ignoresSafeArea()
         }// MARK:  NAVIGATION
+        
     
     
     
@@ -70,6 +77,7 @@ struct FruitDetailView: View {
 struct FruitDetailView_Previews: PreviewProvider {
     static var previews: some View {
         FruitDetailView(fruit: fruitsData[0])
+            
     }
 }
 
