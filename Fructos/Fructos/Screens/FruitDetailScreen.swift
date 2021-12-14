@@ -19,6 +19,8 @@ struct FruitDetailView: View {
     
 
     
+
+    
     var body: some View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: true) {
@@ -27,19 +29,15 @@ struct FruitDetailView: View {
                     FruitImageCardView(width: .infinity, heigth: 500, radius: 0, fruit: fruit)
                     VStack(alignment: .leading, spacing: 20) {
                         // MARK:  TITLE
-                        Text(fruit.title)
-                            .font(.largeTitle)
-                            .fontWeight(.heavy)
-                            .foregroundColor(fruit.gradientColors[1])
+                        buildTitle()
+                        // MARK:  HEADLINE
                         buildFruitHeadline()
                         // MARK:  Nutri
-                        
+                        FruitNutritientsView(fruit:fruit)
                         // MARK:  SUBHEADLINE
                         buildSubHeadline()
                             // MARK:  DESCRIPTION
                         buildDescription()
-                            
-                            
                         // MARK:  LINK
                         SourceLinkView().padding(.bottom,50)
                     }// MARK:  VSTACK
@@ -54,14 +52,19 @@ struct FruitDetailView: View {
             }// MARK:  SCROLL
             .ignoresSafeArea()
         }// MARK:  NAVIGATION
-        
-    
-    
-    
- 
     }// MARK:  BODY
+    
+    
+    fileprivate func buildTitle() -> Text {
+        return Text(fruit.title)
+            .font(.largeTitle)
+            .fontWeight(.heavy)
+            .foregroundColor(fruit.gradientColors[1])
+    }
+    
+    
     fileprivate func buildFruitHeadline() -> some View {
-            // MARK:  HEADLINE
+           
         return Text(fruit.headline)
             .font(.headline)
             .multilineTextAlignment(.leading)

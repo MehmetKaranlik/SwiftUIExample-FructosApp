@@ -49,16 +49,17 @@ struct HomeScreen_Previews: PreviewProvider {
 
 
 // Bugged navigation bar closing always use on parent of navigationLink
-struct HiddenNavigationBar: ViewModifier {
+struct PreferedNavigationModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
-        .navigationBarTitle("Back", displayMode: .inline)
-        .navigationBarHidden(true)
+            .navigationBarTitle("Fruit", displayMode: .large)
+            
+        
     }
 }
 
 extension View {
     func hiddenNavigationBarStyle() -> some View {
-        modifier( HiddenNavigationBar() )
+        modifier( PreferedNavigationModifier() )
     }
 }
