@@ -17,6 +17,8 @@ struct FruitDetailView: View {
     // MARK:  BODY
 
     
+
+    
     var body: some View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: true) {
@@ -31,15 +33,11 @@ struct FruitDetailView: View {
                             .foregroundColor(fruit.gradientColors[1])
                         buildFruitHeadline()
                         // MARK:  Nutri
+                        
                         // MARK:  SUBHEADLINE
-                        Text("Learn more about \(fruit.title.uppercased())")
-                            .fontWeight(.bold)
-                            .foregroundColor(fruit.gradientColors[1])
-                        // MARK:  DESCRIPTION
-                        Text(fruit.description)
-                            .font(.callout)
-                            .fontWeight(.bold)
-                            .multilineTextAlignment(.leading)
+                        buildSubHeadline()
+                            // MARK:  DESCRIPTION
+                        buildDescription()
                             
                             
                         // MARK:  LINK
@@ -66,6 +64,19 @@ struct FruitDetailView: View {
             // MARK:  HEADLINE
         return Text(fruit.headline)
             .font(.headline)
+            .multilineTextAlignment(.leading)
+    }
+    
+    fileprivate func buildSubHeadline() -> Text {
+        return Text("Learn more about \(fruit.title.uppercased())")
+            .fontWeight(.bold)
+            .foregroundColor(fruit.gradientColors[1])
+    }
+    
+    fileprivate func buildDescription() -> some View {
+        return Text(fruit.description)
+            .font(.callout)
+            .fontWeight(.bold)
             .multilineTextAlignment(.leading)
     }
 
