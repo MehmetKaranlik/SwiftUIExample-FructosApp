@@ -9,24 +9,33 @@ import SwiftUI
 
 struct HomeScreen: View {
     // MARK:  PROPERTIES
+    
+    @State private var isShowingSettings: Bool = false
     private var fruitList : [Fruit] = fruitsData
     
     
     // MARK:  BODY
+    fileprivate func buildNavigationBarItemTrailing() -> Button<Image> {
+        return Button(action: {
+            isShowingSettings = true
+        }, label: {
+            Image(systemName: "slider.horizontal.3")
+        })
+    }
+    
     var body: some View {
         NavigationView {
             ScrollView {
                 VStack(alignment:.leading,spacing: 5) {
-                    ForEach(fruitList.shuffled()[0...12]) { item in
-                        NavigationLink(destination: FruitDetailView(fruit: item)) {
-                            ListTileView(fruit: item)
-                            
-                        }
-                        }
+                    ForEach(fruitList.shuffled()[0..<fruitList.count]) { item in
+                    NavigationLink(destination: FruitDetailView(fruit: item)) {
+                        ListTileView(fruit: item)}
+                }
                         
                 }.hiddenNavigationBarStyle()
-                    .padding(.top, 10)
-            }
+                    .navigationBarItems(trailing: buildNavigationBarItemTrailing()
+                    .sheet(isPresented: $isShowingSettings,  content: {SettingsScreen()}))
+                }
             .padding(.horizontal, 5)
             
         }
@@ -38,7 +47,8 @@ struct HomeScreen: View {
 // MARK:  PREVIEW
 struct HomeScreen_Previews: PreviewProvider {
     static var previews: some View {
-        HomeScreen().preferredColorScheme(.light).navigationBarHidden(true)
+        HomeScreen()
+            .preferredColorScheme(.light)
           
             
     }
@@ -52,7 +62,8 @@ struct HomeScreen_Previews: PreviewProvider {
 struct PreferedNavigationModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .navigationBarTitle("Fruit", displayMode: .large)
+            .navigationBarTitle("Fruits", displayMode: .inline)
+            
             
         
     }

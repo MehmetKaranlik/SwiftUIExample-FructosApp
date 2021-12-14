@@ -16,7 +16,6 @@ struct FructosApp: App {
             OnboardingScreen()
             } else {
                HomeScreen()
-                    
             }
         }
     }
